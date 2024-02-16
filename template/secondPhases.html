@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phases</title>
+<style>
+  /* Basic CSS for layout */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Add this to make the container a positioning context */
+    background: linear-gradient(to right, #d4b999, #b86262);
+  }
+  section {
+    margin-bottom: 20px;
+  }
+  h2 {
+    color: #333;
+  }
+  p {
+    color: #666;
+  }
+  /* Style for navigation buttons */
+  .nav-buttons {
+    margin: 0px;
+    text-overflow:ellipsis;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .nav-buttons button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  
+  a{
+    display:inline;
+    text-decoration: none;
+    color: #e1a2a2;
+    justify-content: space-around;
+    width: 30%;
+  }
+  img{
+    width: 70px;
+    height: 150px;
+  }
+  nav{
+    display: flex;
+    /*margin: 0px;*/
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #8EACCD;
+    margin-bottom: auto;
+}
+
+</style>
+</head>
+<body>
+  
+<div class="container">
+  
+    
+  <div class="nav-buttons">
+    <a href="#section1">Character&nbsp&nbsp&nbsp</a>
+    <a href="#section2">Angry &nbsp&nbsp</a>
+    <a href="#section3">Love&nbsp&nbsp</a>
+    <a href="#section4">Fight</a>
+    <a href="#section5">Friendship</a>
+  </div>
+
+<section id="section1">
+  <br>
+<center>
+  <h2>Character</h2>
+    <video controls="" width="300px" height="500px">
+      <source src="V1.mp4"  type="video/mp4">
+    </video>
+    <hr>
+</center>
+</section>
+
+<section id="section2">
+      <center>
+        <h2>Angry</h2>
+        <video controls="" width="300px" height="500px">
+          <source src="V1.mp4"  type="video/mp4">
+        </video>
+        <hr>
+      </center>
+        
+    </section>
+    
+    <section id="section3">
+      <center>
+        <h2>Love</h2>
+        <video controls="" width="300px" height="500px">
+          <source src="V1.mp4"  type="video/mp4">
+        </video>
+        <hr>
+    <br>
+      </center>
+    </section>
+    
+    <section id="section4">
+      <center>
+        <h2>Fight</h2>
+        <video controls="" width="300px" height="500px">
+          <source src="V1.mp4"  type="video/mp4">
+        </video>
+      </center>
+    </section>
+
+    <section id="section5">
+      <center>
+        <h2>Friendship</h2>
+        <video controls="" width="300px" height="500px">
+          <source src="V1.mp4"  type="video/mp4">
+        </video>
+      </center>
+    </section>
+</div>
+
+
+<script>
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
+<script>
+    let slideIndex = 0;
+  
+    function slide(direction) {
+      const slider = document.querySelector('.recipe-slider-inner');
+      const cardWidth = document.querySelector('.recipe-card').offsetWidth;
+      
+      if (direction === 'left') {
+        slideIndex = Math.max(slideIndex - 1, 0);
+      } else {
+        slideIndex = Math.min(slideIndex + 1, slider.children.length - 1);
+      }
+      
+      slider.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
+    }
+  </script>
+
+</body>
+</html>

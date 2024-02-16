@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<div class="menu-container">
+        
+    <title>PlacesVisted</title>
+    <style>
+        .menu-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .menu-items {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease-in-out;
+            overflow-x: scroll; /* Enable horizontal scrolling */
+        }
+
+        .menu-item {
+            flex: 0 0 300px; /* Set a fixed width for each menu item */
+            box-sizing: border-box;
+            text-align: left;
+            overflow: hidden; /* Hide overflowing content */
+            position: relative;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 250px; /* Set a fixed height */
+            object-fit: cover; /* Maintain aspect ratio without stretching */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: transform 0.3s; /* Add smooth transition on hover */
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.3); /* Enlarge the image on hover */
+        }
+
+        .menu-item h3 {
+            margin-bottom: 5px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative; /* Add this to make the container a positioning context */
+            background: linear-gradient(to right, #d4b999, #b86262);
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Places Visited</h2>
+        <div class="menu-items">
+            <div class="menu-item">
+                <img src="1.jpeg" alt="Food Item 1">
+                <h3>1</h3>
+            </div>
+            <div class="menu-item">
+                <img src="2.jpeg" alt="Food Item 1">
+                <h3>2</h3>
+            </div>
+            <div class="menu-item">
+                <img src="3.jpeg" alt="Food Item 1">
+                <h3>3</h3>
+            </div>
+            <div class="menu-item">
+                <img src="4.jpeg" alt="Food Item 1">
+                <h3>4</h3>
+            </div>
+            <div class="menu-item">
+                <img src="5.jpeg" alt="Food Item 1">
+                <h3>5</h3>
+            </div>
+            <div class="menu-item">
+                <img src="6.jpeg" alt="Food Item 1">
+                <h3>6</h3>
+            </div>
+        </div>
+    </div>
+<script>
+    function scrollMenu(direction) {
+            const menuItems = document.querySelector('.menu-items');
+            const scrollAmount = 400; // Adjust the scroll amount as needed
+
+            if (direction === 'left') {
+                menuItems.scrollLeft -= scrollAmount;
+            } else {
+                menuItems.scrollLeft += scrollAmount;
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetElement = document.querySelector(this.getAttribute('href'));
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+</script>
+
+</body>
+</html>
